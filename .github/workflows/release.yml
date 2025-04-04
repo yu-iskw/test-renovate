@@ -1,5 +1,6 @@
 name: release
 on:
+  pull_request:
   push:
     tags:
       - "v*.*.*"
@@ -7,6 +8,8 @@ on:
 jobs:
   release:
     if: github.event.action != 'labeled'
+    permissions:
+      contents: write
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -33,8 +36,8 @@ jobs:
           if_false: ${{ steps.bumpr.outputs.next_version }}
 
       # Create release.
-      - uses: shogo82148/actions-create-release@v1
-        if: "steps.tag.outputs.value != ''"
+      - uses: shogo82148/actions-create-release@v1.7.7
+        if: ${{ steps.tag.outputs.value != '' }}
         with:
           # This token is provided by Actions, you do not need to create your own token
           github_token: ${{ secrets.GITHUB_TOKEN }}
