@@ -3,7 +3,8 @@
     {
       "matchManagers": ["github-actions"],
       "allowedVersions": "/^v\\d+\\.\\d+\\.\\d+$/",
-      "pinDigests": true
+      "pinDigests": true,
+      "versioning": "semver"
     }
   ]
 }
