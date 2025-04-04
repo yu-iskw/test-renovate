@@ -2,7 +2,6 @@
   "packageRules": [
     {
       "matchManagers": ["github-actions"],
-      "allowedVersions": "/^(v)?[0-9]+\\.[0-9]+\\.[0-9]+$/",
       "pinDigests": true
     }
   ]
