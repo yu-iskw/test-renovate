@@ -1,0 +1,13 @@
+name: Test Renovate
+
+on:
+  workflow_dispatch:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: yu-iskw/test-renovate@v1
+        with:
+          name: "Renovate"

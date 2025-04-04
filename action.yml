@@ -1,0 +1,21 @@
+name: "Hello World"
+
+description: "Greet someone"
+
+inputs:
+  name: # id of input
+    description: "Who to greet"
+    required: true
+outputs:
+  message:
+    description: "Message"
+    value: "${{ steps.echo.outputs.message }}"
+
+runs:
+  using: "composite"
+  steps:
+    - name: echo
+      shell: bash
+      run: |
+        message="Hello World, ${{ inputs.who-to-greet }}!"
+        echo "message=$message" >> $GITHUB_OUTPUT
