@@ -8,6 +8,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@8f4b7f84864484a7bf31766abe9204da3cbe65b3
-      - uses: yu-iskw/test-renovate@v1
+      - uses: yu-iskw/test-renovate@43c9417e495c33a807813564c0ddf86b812feea1 # v1
         with:
           name: "Renovate"
